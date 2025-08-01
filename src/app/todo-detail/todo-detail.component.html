@@ -1,0 +1,19 @@
+<div *ngIf="todo">
+  <h2>{{ todo.title | uppercase }} Details</h2>
+  <div><span>id: </span>{{ todo.id }}</div>
+  <div>
+    <label for="todo-title">Todo title: </label>
+    <input id="todo-title" [(ngModel)]="todo.title" placeholder="title">
+  </div>
+  <div>
+    <label for="todo-description">Description: </label>
+    <textarea id="todo-description" [(ngModel)]="todo.description" placeholder="description"></textarea>
+  </div>
+  <div>
+    <label for="todo-completed">Completed: </label>
+    <input id="todo-completed" type="checkbox" [(ngModel)]="todo.completed">
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" routerLink="/edit/{{ todo.id }}">edit</button>
+  <button type="button" (click)="delete()">delete</button>
+</div>

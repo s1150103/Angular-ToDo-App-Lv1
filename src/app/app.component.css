@@ -1,0 +1,12 @@
+nav {
+  padding: 1rem 0;
+}
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav a.active {
+  color: #1976d2;
+}
+

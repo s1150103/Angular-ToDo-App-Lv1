@@ -1,6 +1,9 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { App } from './app/app';
+// メインエントリーポイント - ngModulesを使用したAngularアプリケーションの起動
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/app.module';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+// ngModules方式でアプリケーションを起動
+// platformBrowserDynamic()を使ってAppModuleをブートストラップ
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch((err: any) => console.error(err)); // エラーハンドリング
+

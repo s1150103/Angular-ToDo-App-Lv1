@@ -1,0 +1,24 @@
+<h2>ToDo一覧</h2>
+
+<div class="action-bar">
+  <button type="button" class="btn-delete" (click)="performDelete()" [disabled]="!hasSelection()">
+    <span class="btn-icon">🗑️</span>
+    <span class="btn-text">{{ getDeleteButtonText() }}</span>
+  </button>
+</div>
+
+<ul class="todo-list">
+  <li *ngFor="let todo of todos" class="todo-item">
+    <input type="checkbox" [(ngModel)]="todo.selected" id="checkbox-{{todo.id}}" class="todo-checkbox">
+    <label for="checkbox-{{todo.id}}" class="todo-label">
+      <a [routerLink]="['/todo', todo.id]" class="todo-link">{{ todo.title }}</a>
+    </label>
+    <div class="todo-actions">
+      <button type="button" class="btn-edit" [routerLink]="['/edit', todo.id]">
+        <span class="btn-icon">✏️</span>
+        <span class="btn-text">編集</span>
+      </button>
+    </div>
+  </li>
+</ul>
+
