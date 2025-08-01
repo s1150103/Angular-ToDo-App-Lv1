@@ -1,59 +1,175 @@
-# AngularTodoAppLv1
+# Angular ToDo App Lv1
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.1.
+Angular学習用のToDoアプリケーション（レベル1）です。Angularの基本的な機能を使用して、CRUD操作が可能なToDoリストを実装しています。
 
-## Development server
+## 🚀 機能
 
-To start a local development server, run:
+### 基本機能
+- ✅ **ToDo一覧表示** - 登録されたToDoをID昇順で表示
+- ✅ **ToDo詳細表示** - 個別ToDoの詳細情報を表示
+- ✅ **ToDo新規作成** - 新しいToDoアイテムの作成
+- ✅ **ToDo編集** - 既存ToDoの編集・更新
+- ✅ **ToDo削除** - 個別またはチェックボックス選択による一括削除
 
-```bash
-ng serve
+### UI/UX機能
+- 🎨 **スタイリッシュなデザイン** - モダンなUI/UXデザイン
+- ✏️ **編集ボタン** - 一覧画面から直接編集画面へ遷移
+- 🗑️ **一括削除** - チェックボックスで複数選択して削除
+- 📱 **レスポンシブ対応** - 様々な画面サイズに対応
+
+## 🛠️ 技術スタック
+
+- **フレームワーク**: Angular 18
+- **言語**: TypeScript
+- **スタイル**: CSS3
+- **フォーム**: Template Driven Forms
+- **ルーティング**: Angular Router
+- **データ管理**: Angular In-Memory Web API
+- **アーキテクチャ**: NgModules
+
+## 📁 プロジェクト構造
+
+```
+src/
+├── app/
+│   ├── models/
+│   │   └── todo.model.ts          # ToDoデータモデル
+│   ├── services/
+│   │   └── todo.service.ts        # ToDoサービス（HTTP API操作）
+│   ├── todo-list/                 # ToDo一覧コンポーネント
+│   ├── todo-detail/               # ToDo詳細コンポーネント
+│   ├── todo-form/                 # ToDo新規作成コンポーネント
+│   ├── todo-edit/                 # ToDo編集コンポーネント
+│   ├── todo-routing.module.ts     # ルーティング設定
+│   └── app.module.ts              # メインモジュール
+└── in-memory-data.service.ts      # モックデータサービス
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 🎯 学習目標
 
-## Code scaffolding
+このプロジェクトは以下のAngular概念の学習を目的としています：
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **コンポーネント設計** - 機能別コンポーネントの作成
+- **サービス** - データ操作とビジネスロジックの分離
+- **ルーティング** - SPA（Single Page Application）の実装
+- **フォーム処理** - Template Driven Formsの使用
+- **HTTP通信** - RESTful APIの模擬実装
+- **状態管理** - コンポーネント間でのデータ共有
+
+## 🚦 セットアップ・実行方法
+
+### 前提条件
+- Node.js (推奨: v18以上)
+- npm (Node.jsに含まれています)
+- Angular CLI (`npm install -g @angular/cli`)
+
+### インストールと実行
+
+1. **リポジトリのクローン**
+   ```bash
+   git clone https://github.com/s1150103/Angular-ToDo-App-Lv1.git
+   cd Angular-ToDo-App-Lv1
+   ```
+
+2. **依存関係のインストール**
+   ```bash
+   npm install
+   ```
+
+3. **開発サーバーの起動**
+   ```bash
+   npm start
+   # または
+   ng serve
+   ```
+
+4. **アプリケーションへのアクセス**
+   
+   ブラウザで `http://localhost:4200` を開いてください
+
+## 📖 使用方法
+
+### 基本操作
+
+1. **ToDo一覧表示**
+   - アプリ起動時に自動で一覧が表示されます
+   - 5つのサンプルデータが初期表示されます
+
+2. **新規作成**
+   - 一覧画面から「新規作成」ボタンをクリック
+   - タイトルと説明を入力して保存
+
+3. **詳細表示**
+   - 一覧のToDoタイトルをクリックすると詳細画面へ遷移
+
+4. **編集**
+   - 一覧の「編集」ボタンまたは詳細画面の「編集」ボタンをクリック
+   - 内容を変更して保存
+
+5. **削除**
+   - **個別削除**: 詳細・編集画面の「削除」ボタン
+   - **一括削除**: 一覧でチェックボックス選択後、「削除」ボタン
+
+## 🎨 デザイン特徴
+
+- **カラーパレット**: モダンなグラデーションとシャドウ
+- **アニメーション**: ホバーエフェクトとトランジション
+- **アイコン**: 直感的な絵文字アイコン（🗑️、✏️）
+- **レイアウト**: フレックスボックスによる柔軟なレイアウト
+
+## 🔧 開発・コード品質
+
+- **ESLint**: コード品質の静的検証
+- **Prettier**: コードフォーマットの統一
+- **TypeScript**: 型安全性の確保
+- **Angular Style Guide**: Angularのベストプラクティスに準拠
+
+### コマンド
 
 ```bash
-ng generate component component-name
+# リント実行
+npm run lint
+
+# フォーマット実行
+npm run format
+
+# ビルド
+npm run build
+
+# テスト実行
+npm test
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 📝 ToDoモデル
 
-```bash
-ng generate --help
+```typescript
+export interface Todo {
+  id: number;
+  title: string;
+  description: string;
+  completed: boolean;
+}
 ```
 
-## Building
+## 🌟 主な学習ポイント
 
-To build the project run:
+1. **コンポーネント間通信** - サービスを通じたデータ共有
+2. **ライフサイクルフック** - ngOnInitでの初期化処理
+3. **双方向データバインディング** - [(ngModel)]の使用
+4. **ルートパラメータ** - URLからIDを取得してデータを表示
+5. **Observable** - RxJSを使った非同期処理
+6. **依存性注入** - サービスのコンストラクタインジェクション
 
-```bash
-ng build
-```
+## 🚀 今後の拡張予定
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Lv2**: Reactive Forms、バリデーション強化
+- **Lv3**: 状態管理（NgRx）、リアルタイム機能
+- **Lv4**: PWA対応、オフライン機能
 
-## Running unit tests
+## 🤝 貢献・フィードバック
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+学習目的のプロジェクトですが、改善提案やバグ報告は歓迎します！
 
-```bash
-ng test
-```
+## 📄 ライセンス
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+このプロジェクトはMITライセンスの下で公開されています。
