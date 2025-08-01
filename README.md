@@ -162,9 +162,16 @@ export interface Todo {
 
 ## 🚀 今後の拡張予定
 
-- **Lv2**: Reactive Forms、バリデーション強化
-- **Lv3**: 状態管理（NgRx）、リアルタイム機能
-- **Lv4**: PWA対応、オフライン機能
+### Lv2
+- **Reactive Forms** - Lv2以降はReactive Formを使って入力欄を実装する
+  - [Angular - Reactive forms](https://angular.dev/guide/reactive-forms)
+- **Bootstrap導入** - bootstrapをインストールし、bootstrapを利用してデザインを整える
+  - [Bootstrap](https://getbootstrap.com/)
+    - 見た目の設定方法は[こちらのドキュメント](https://getbootstrap.com/docs/5.3/getting-started/introduction/)を参考に
+  - [NG Bootstrap](https://ng-bootstrap.github.io/)
+    - Angular用のbootstrap
+    - インストールは[こちらのリンクの方法](https://ng-bootstrap.github.io/#/getting-started)から行う
+- **機能完全実装** - Lv1の機能をすべて実装する
 
 ## 🤝 貢献・フィードバック
 
